@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.sendfile('/index.html');
+  res.sendFile(path.join(__dirname, '../../client', 'index.html'));
 });
 
 module.exports = router;
