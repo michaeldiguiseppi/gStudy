@@ -21,10 +21,10 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
-            <li ng-if="!user"><a ui-sref="login">Log In</a></li>
-            <li ng-if="!user"><a ui-sref="signup">Sign Up</a></li>
-            <li ng-if="user"><a ui-sref="profile">My Profile</a></li>
-            <li ng-if="user"><a ui-sref="logout">Log Out</a></li>
+            <li ng-if="!currentUser"><a ui-sref="login">Log In</a></li>
+            <li ng-if="!currentUser"><a ui-sref="signup">Sign Up</a></li>
+            <li ng-if="currentUser"><a ui-sref="profile">My Profile</a></li>
+            <li ng-if="currentUser"><a ui-sref="logout">Log Out</a></li>
           </ul>
         </div>
       </div>
@@ -43,6 +43,10 @@
     <script src="./js/components/auth/login.controller.js"></script>
     <script src="./js/components/auth/login.directive.js"></script>
     <script src="./js/components/auth/login.service.js"></script>
+    <script src="./js/components/auth/register.controller.js"></script>
+    <script src="./js/components/auth/register.service.js"></script>
+    <script src="./js/components/profile/profile.controller.js"></script>
+    <script src="./js/components/profile/profile.service.js"></script>
     <script src="./js/components/decks/deck.service.js"></script>
     <script src="./js/components/decks/deck.controller.js"></script>
     <script src="./js/components/decks/deck.directive.js"></script>
