@@ -12,20 +12,23 @@
         });
       };
 
-      $scope.newDeck = {
-        cards: [{}],
-        deck_name: '',
-        description: '',
-        user_id: JSON.parse($rootScope.currentUser).id,
-      };
+      if ($rootScope.currentUser) {
+        $scope.newDeck = {
+          cards: [{}],
+          deck_name: '',
+          description: '',
+          user_id: JSON.parse($rootScope.currentUser).id,
+        };
 
-      $scope.addQuestion = function() {
-        $scope.newDeck.cards.push({});
-      };
+        $scope.addQuestion = function() {
+          $scope.newDeck.cards.push({});
+        };
 
-      $scope.addDeck = function() {
-        console.log($scope.newDeck);
-      };
-
+        $scope.addDeck = function() {
+          console.log($scope.newDeck);
+          var user_id = JSON.parse($rootScope.currentUser).id;
+          DeckService.addDeck(user_id, $scope.newDeck);
+        };
+      }
     }]);
 })();
