@@ -4,12 +4,10 @@
       var baseUrl = 'http://localhost:3000/api';
       return {
         getAll: function(resource) {
-          console.log('resource', resource);
           return $http({
             method: 'GET',
             url: baseUrl + '/' + resource
           }).then(function(data) {
-            console.log('Crud Service Data', data);
             return data;
           }).catch(function(err) {
             return err;
@@ -18,7 +16,7 @@
         getOne: function(resource, id) {
           return $http({
             method: 'GET',
-            url: baseUrl + '/'
+            url: baseUrl + '/' + resource + '/' + id
           }).then(function(data) {
             return data;
           }).catch(function(err) {
