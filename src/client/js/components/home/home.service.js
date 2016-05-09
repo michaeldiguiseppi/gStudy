@@ -4,12 +4,15 @@
     .service('HomeService', ['crudService', function(crudService) {
       return {
         getAll: function() {
-          console.log('here?');
           return crudService.getAll('decks').then(function(data) {
-            console.log('Home Service Data', data);
-            return data;
+            return data.data;
           });
-        }
+        },
+        getOne: function(id) {
+          return crudService.getOne('decks', id).then(function(data) {
+            return data.data[0];
+          });
+        },
       };
     }]);
 
