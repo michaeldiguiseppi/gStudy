@@ -23,10 +23,10 @@
             return err;
           });
         },
-        insertOne: function(resource, data) {
+        addOne: function(resource, id, data) {
           return $http({
             method: 'POST',
-            url: baseUrl + '/' + resource,
+            url: baseUrl + '/' + resource + '/' + id,
             data: data,
           }).then(function(data) {
             return data;
