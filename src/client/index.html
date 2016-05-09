@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>gStudy App</title>
+    <!-- Load Angular -->
+
+  </head>
+  <body>
+
+    <div ui-view></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <!-- Load UI-Router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <!-- Load main app file -->
+    <script src="./js/app.js"></script>
+    <!-- Load all directive files -->
+    <script src="./js/routes.js"></script>
+    <script src="./js/components/nav-bar/navbar.controller.js"></script>
+    <script src="./js/components/nav-bar/navbar.directive.js"></script>
+    <script src="./js/components/nav-bar/navbar.service.js"></script>
+  </body>
+</html>
