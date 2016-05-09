@@ -17,6 +17,11 @@
           url: "/signup",
           templateUrl: "js/components/auth/signup.template.html",
           controller: 'AuthCtrl',
+        })
+        .state('deck', {
+          url: "/deck/:id",
+          templateUrl: "js/components/decks/deck.template.html",
+          controller: 'DeckCtrl',
         });
         // .state('members', {
         //   url: "/members",
