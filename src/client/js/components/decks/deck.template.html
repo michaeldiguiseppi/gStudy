@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <img src="http://placehold.it/300/300" alt="placeholder"/>
+    </div>
+    <div class="col-lg-3">
+      <h2>{{ deck.deck_name }}</h2>
+      <p>{{ deck.description }}</p>
+      <h4>Created on {{ deck.created_at | date:"MM/dd/yyyy 'at' h:mma" }}</h4>
+    </div>
+  </div>
+</div>
