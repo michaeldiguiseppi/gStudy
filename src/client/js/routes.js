@@ -16,12 +16,30 @@
         .state('signup', {
           url: "/signup",
           templateUrl: "js/components/auth/signup.template.html",
-          controller: 'AuthCtrl',
+          controller: 'RegisterCtrl',
         })
         .state('deck', {
           url: "/deck/:id",
           templateUrl: "js/components/decks/deck.template.html",
           controller: 'DeckCtrl',
+        })
+        .state('create', {
+          url: "/new",
+          templateUrl: "js/components/decks/new.template.html",
+          controller: 'DeckCtrl',
+        })
+        .state('profile', {
+          url: '/profile',
+          templateUrl: "js/components/profile/profile.template.html",
+          controller: 'ProfileCtrl',
+        })
+        .state('logout', {
+          controller: function($scope, $rootScope, AuthService) {
+            function logout () {
+              AuthService.logout($rootScope.currentUser);
+            }
+            logout();
+          },
         });
         // .state('members', {
         //   url: "/members",
@@ -91,4 +109,22 @@
         //   }
         // });
     });
+
+    angular.module('myApp')
+      .run(function($rootScope, $state, $window) {
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+          // var requireLogin = toState.data.requireLogin;
+          // var blockLogin = toState.data.blockLogin;
+          $rootScope.currentUser = $window.localStorage.getItem('user');
+          // if (requireLogin && !$rootScope.currentUser) {
+          //   event.preventDefault();
+          //   $state.go('login');
+          // }
+          // if (blockLogin && $rootScope.currentUser) {
+          //   event.preventDefault();
+          //   $state.go('members');
+          // }
+        });
+      });
+
 })();
