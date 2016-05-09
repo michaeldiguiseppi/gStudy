@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+      <div class="row">
+        <h1>New Deck</h1>
+      </div>
+      <br />
+      <hr />
+      <br />
+      <div class="row">
+        <form class="form-horizontal" ng-submit="addDeck()">
+          <div class="row">
+            <div class="col-lg-6">
+              <input type="text" class="form-control" placeholder="Deck Name" ng-model="newDeck.deck_name" />
+            </div>
+            <div class="col-lg-6">
+              <textarea placeholder="Description" ng-model="newDeck.description" class="form-control" cols="10"></textarea>
+            </div>
+          </div>
+          <br />
+          <hr />
+          <div ng-repeat="newCard in newDeck.cards">
+            <br />
+            <div class="row">
+              <div class="col-lg-6">
+                <input type="text" class="form-control" placeholder="Question" ng-model="newCard.question" />
+              </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" placeholder="Answer" ng-model="newCard.answer" />
+              </div>
+              <br />
+            </div>
+          </div>
+          <br />
+          <button class="btn btn-md btn-success" ng-click="addQuestion()">Add Another Question</button>
+          <br />
+          <hr />
+          <br />
+          <div class="col-lg-3 col-lg-offset-9">
+            <button class="btn btn-md btn-success">Create Deck</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
