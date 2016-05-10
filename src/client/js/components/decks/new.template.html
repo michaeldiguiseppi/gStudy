@@ -11,10 +11,10 @@
         <form class="form-horizontal" ng-submit="addDeck()">
           <div class="row">
             <div class="col-lg-6">
-              <input type="text" class="form-control" placeholder="Deck Name" ng-model="newDeck.deck_name" />
+              <input type="text" class="form-control" placeholder="Deck Name" ng-model="newDeck.deck_name" required/>
             </div>
             <div class="col-lg-6">
-              <textarea placeholder="Description" ng-model="newDeck.description" class="form-control" cols="10"></textarea>
+              <textarea placeholder="Description" ng-model="newDeck.description" class="form-control" cols="10" required></textarea>
             </div>
           </div>
           <br />
@@ -23,10 +23,20 @@
             <br />
             <div class="row">
               <div class="col-lg-6">
-                <input type="text" class="form-control" placeholder="Question" ng-model="newCard.question" />
+                <input type="text" class="form-control" placeholder="Question" ng-model="newCard.question" required/>
               </div>
               <div class="col-lg-6">
-                <input type="text" class="form-control" placeholder="Answer" ng-model="newCard.answer" />
+                <input type="text" class="form-control" placeholder="Answer" ng-model="newCard.answer" required/>
+              </div>
+              <br />
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-lg-6">
+                <input type="text" class="form-control" placeholder="Front Image (200x200)" ng-model="newCard.front_image" />
+              </div>
+              <div class="col-lg-6">
+                <input type="text" class="form-control" placeholder="Back Image (200x200)" ng-model="newCard.back_image" />
               </div>
               <br />
             </div>
