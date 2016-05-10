@@ -1,14 +1,15 @@
 (function() {
 
   angular.module('myApp')
-    .controller('StudyCtrl', ['$scope', '$stateParams', 'StudyService',
-      function($scope, $stateParams, StudyService) {
+    .controller('StudyCtrl', ['$scope', '$stateParams', 'StudyService', 'SocketService',
+      function($scope, $stateParams, StudyService, SocketService) {
         $scope.showAnswer = false;
         StudyService.getDeck($stateParams.id).then(function(deck) {
           $scope.deck = deck;
           StudyService.getCards(deck.id).then(function(cards) {
             $scope.cards = cards;
             $scope.remaining = cards.length;
+            SocketService.emit('deck.studying', { message: 'Studying Deck', id: 1 });
           });
         });
         $scope.cardNum = 0;
@@ -45,15 +46,6 @@
             }
             $scope.showAnswer = false;
           });
-        };
-
-        $scope.nextCard = function() {
-          $scope.showAnswer = false;
-          if ($scope.cardNum + 1 < $scope.cards.length) {
-            $scope.cardNum = $scope.cardNum + 1;
-          } else {
-
-          }
         };
       }]);
 
