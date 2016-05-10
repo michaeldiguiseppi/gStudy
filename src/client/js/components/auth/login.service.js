@@ -4,7 +4,6 @@
       var baseUrl = 'http://localhost:3000';
       return {
         login: function(data) {
-          console.log('Data', data);
           return $http({
             method: 'POST',
             url: baseUrl + '/auth/login',
@@ -12,7 +11,6 @@
           }).then(function(data) {
             return data;
           }).catch(function(err) {
-            console.log(err);
             return err;
           });
         },
