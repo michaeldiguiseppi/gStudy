@@ -1,9 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6" ng-show="!game">
-      <div class="well well-lg">
-        <h2>Game ended. <br /> Final score: {{ correct }} correct out of {{ correct + incorrect }}.</h2>
+      <a ui-sref="home">
+        <div class="well well-lg">
+          <h2>Studying ended. <br /> Final score: {{ correct }} correct out of {{ correct + incorrect }}.
+          <br />
+          Click to return home.
+          </h2>
       </div>
+      </a>
     </div>
     <div class="col-lg-6" ng-show="game">
       <div class="well well-lg">
