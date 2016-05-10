@@ -16,6 +16,10 @@ module.exports = {
        user:     process.env.RDS_USERNAME,
        password: process.env.RDS_PASSWORD
      },
+     pool: {
+       min: 2,
+       max: 10,
+     }
     }
 
 };
