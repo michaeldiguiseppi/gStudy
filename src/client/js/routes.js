@@ -80,7 +80,7 @@
           $rootScope.currentUser = $window.localStorage.getItem('user');
           if (requireLogin && !$rootScope.currentUser) {
             event.preventDefault();
-            $state.go('register');
+            $state.go('signup');
           }
           if (blockLogin && $rootScope.currentUser) {
             event.preventDefault();
