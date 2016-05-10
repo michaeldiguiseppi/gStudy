@@ -1,4 +1,4 @@
-angular.module('myApp', ['ui.router', 'btford.socket-io']);
+angular.module('myApp', ['ui.router', 'btford.socket-io', 'angularMoment']);
 
 angular.module('myApp')
   .controller('mainController', ['$scope', function($scope) {
