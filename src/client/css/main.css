@@ -11,7 +11,7 @@ a, a:hover{
   text-decoration: none;
 }
 
-a well h2 {
+a .well h2 {
   color: black;
 }
 
@@ -27,7 +27,7 @@ a well h2 {
   color: blue;
 }
 
-well img {
+.well img {
   height: 100px;
   width: 100px;
 }
