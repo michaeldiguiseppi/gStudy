@@ -20,7 +20,7 @@
         $scope.answeredCards = [];
         $scope.confident = function(id) {
           StudyService.updateCard(id, {positive_score: true}).then(function() {
-            $scope.answeredCards.push($scope.cards[cardNum]);
+            $scope.answeredCards.push($scope.cards[$scope.cardNum]);
             $scope.correct = $scope.correct + 1;
             if ($scope.remaining - 1 >= -1) {
               $scope.remaining = $scope.remaining - 1;
@@ -36,7 +36,7 @@
         };
         $scope.nonConfident = function(id) {
           StudyService.updateCard(id, {negative_score: true}).then(function() {
-            $scope.answeredCards.push($scope.cards[cardNum]);
+            $scope.answeredCards.push($scope.cards[$scope.cardNum]);
             $scope.incorrect = $scope.incorrect + 1;
             if ($scope.remaining - 1 >= -1) {
               $scope.remaining = $scope.remaining - 1;
