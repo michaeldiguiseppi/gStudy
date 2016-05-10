@@ -7,6 +7,7 @@
     </div>
     <div class="col-lg-6" ng-show="game">
       <div class="well well-lg">
+        <img ng-show="cards[cardNum].front_image" ng-src="{{cards[cardNum].front_image}}" alt="front_image" />
         <h2>{{ cards[cardNum].question }}</h2>
       </div>
       <br />
@@ -22,6 +23,7 @@
       <br />
       <div class="well well-lg" ng-click="showAnswer = true">
         <div ng-show="showAnswer">
+          <img ng-show="cards[cardNum].back_image" ng-src="{{cards[cardNum].back_image}}" alt="back_image" />
           <h2 class="text-center">{{ cards[cardNum].answer }}</h2>
         </div>
         <div ng-show="!showAnswer">
@@ -32,7 +34,7 @@
     <div class="col-lg-6">
       <h1>{{ deck.deck_name }}</h1>
       <br />
-      <h4><span>{{ remaining }}</span> questions remain &nbsp;&nbsp; | &nbsp;&nbsp;
+      <h4><span ng-class="{blue: remaining > 0}">{{ remaining }}</span> questions remain &nbsp;&nbsp; | &nbsp;&nbsp;
         <span ng-class="{green: correct > 0}">{{ correct }}</span> questions correct &nbsp;&nbsp; | &nbsp;&nbsp;
         <span ng-class="{red: incorrect > 0}">{{ incorrect }}</span> questions incorrect</h4>
       <hr />
