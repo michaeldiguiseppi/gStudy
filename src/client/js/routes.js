@@ -28,6 +28,11 @@
           templateUrl: "js/components/decks/new.template.html",
           controller: 'DeckCtrl',
         })
+        .state('study', {
+          url: "/study/:id",
+          templateUrl: "js/components/study/study.template.html",
+          controller: 'StudyCtrl',
+        })
         .state('profile', {
           url: '/profile',
           templateUrl: "js/components/profile/profile.template.html",
