@@ -1,7 +1,7 @@
 (function() {
   angular.module('myApp')
-    .controller('DeckCtrl', ['$scope', '$stateParams', '$rootScope', 'HomeService', 'DeckService',
-    function($scope, $stateParams, $rootScope, HomeService, DeckService) {
+    .controller('DeckCtrl', ['$scope', '$stateParams', '$rootScope', '$state', 'HomeService', 'DeckService',
+    function($scope, $stateParams, $rootScope, $state, HomeService, DeckService) {
       $scope.getDeck = function() {
         HomeService.getOne($stateParams.id).then(function(data) {
           console.log('data', data);
@@ -27,7 +27,9 @@
         $scope.addDeck = function() {
           console.log($scope.newDeck);
           var user_id = JSON.parse($rootScope.currentUser).id;
-          DeckService.addDeck(user_id, $scope.newDeck);
+          DeckService.addDeck(user_id, $scope.newDeck).then(function() {
+            $state.go('home');
+          });
         };
       }
     }]);

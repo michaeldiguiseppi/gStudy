@@ -10,7 +10,7 @@
         <h4>Created on {{ deck.created_at | date:"MM/dd/yyyy 'at' h:mma" }}</h4>
       </div>
       <div class="row">
-        <button class="btn btn-md btn-success">Study Deck</button>
+        <a ui-sref="study({ id: deck.id })" class="btn btn-md btn-success">Study Deck</a>
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
         <th>Answer</th>
       </thead>
       <tbody>
-        <tr ng-repeat="card in cards">
+        <tr ng-repeat="card in cards | limitTo:3">
           <td>{{ card.question }}</td>
           <td>{{ card.answer }}</td>
         </tr>
