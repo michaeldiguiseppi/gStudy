@@ -16,6 +16,8 @@ router.get('/decks/:id', getOneDeck);
 router.get('/cards/:id', getCards);
 router.post('/decks/:id', postDecks);
 router.post('/cards/:id', postCards);
+router.put('/decks/:id', putDecks);
+router.put('/cards/:id', putCards);
 
 ////////////////////////////////
 
@@ -50,6 +52,19 @@ function postCards(req, res) {
   req.body.deck_id = req.params.id;
   Cards().insert(req.body).returning('*').then(function(data) {
     res.json(data);
+  });
+}
+
+function putDecks(req, res) {
+
+}
+
+function putCards(req, res) {
+  var card_id = req.params.id;
+  console.log(card_id);
+  console.log(req.body);
+  Cards().where('id', card_id).update(req.body, 1).then(function(card) {
+    res.json(card);
   });
 }
 
