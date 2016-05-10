@@ -25,9 +25,13 @@ well img {
 }
 
 .notifications {
-  padding-top: 60px;
+  margin-top: -25px;
   height: 660px;
   overflow: scroll;
+}
+
+.notification-header {
+  margin-top: -30px;
 }
 
 .decks {

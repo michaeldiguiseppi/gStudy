@@ -11,12 +11,25 @@
         <a ui-sref="deck({ id: deck.id })">
           <img src="http://placehold.it/300/300" alt="placeholder" />
           <h3 class="text-center">{{ deck.deck_name }}</h3>
+          <h3 class="text-center">
+            <span ng-if="deck.created_at >= deck.updated_at">
+              Created {{ deck.created_at | date:"MM/dd/yyyy 'at' h:mma" }}
+            </span>
+            <span ng-if="deck.updated_at > deck.created_at">
+              Updated {{ deck.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}
+            </span>
+          </h3>
         </a>
       </div>
     </div>
   </div>
 </div>
 <div class="col-lg-4">
+  <div class="notification-header">
+    <h2>Notifications</h2>
+  </div>
+  <hr />
+  <br />
   <div class="notifications" ng-controller="SocketCtrl">
     <div ng-repeat="notif in notifications track by $index">
       <div class="well well-lg">
