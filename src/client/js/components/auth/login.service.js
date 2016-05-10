@@ -2,7 +2,7 @@
   angular.module('myApp')
     .service('AuthService', ['$http', '$window', function($http, $window) {
       var baseUrl;
-      if (NODE_ENV === 'production') {
+      if (window.NODE_ENV === 'production') {
         baseUrl = 'http://gstudy.herokuapp.com';
       } else {
         baseUrl = 'http://localhost:3000';
