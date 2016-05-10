@@ -14,3 +14,12 @@ a, a:hover{
 .green {
   color: green;
 }
+
+.blue {
+  color: blue;
+}
+
+well img {
+  height: 100px;
+  width: 100px;
+}
