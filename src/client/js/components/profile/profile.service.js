@@ -4,8 +4,8 @@
       var currentUser = JSON.parse($rootScope.currentUser).id;
       return {
         getDecks: function() {
-          return crudService.getDecks(currentUser).then(function(data) {
-            return data.data;
+          return crudService.getAll('decks').then(function(data) {
+            return data;
           });
         }
       };
