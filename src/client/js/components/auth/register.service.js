@@ -1,7 +1,12 @@
 (function() {
   angular.module('myApp')
     .service('RegisterService', ['$http', '$window', function($http, $window) {
-      var baseUrl = 'http://localhost:3000/';
+      var baseUrl;
+      if (process.env.NODE_ENV === 'production') {
+        baseUrl = 'http://gstudy.herokuapp.com';
+      } else {
+        baseUrl = 'http://localhost:3000';
+      }
       return {
         register: function(data) {
           return $http({
