@@ -21,6 +21,14 @@ app.set('port', port);
 
 var server = http.createServer(app);
 global.io = require('socket.io')(server);
+
+io.on('connection', function (socket) {
+  // socket.emit('status', { status: 'hello' });
+  socket.on('deck.studying', function (data) {
+    console.log('Someone is studying a deck:', data.id);
+    global.io.emit('deck.studying', 'Mike is studying a deck.');
+  });
+});
 /**
  * Listen on provided port, on all network interfaces.
  */
