@@ -6,7 +6,7 @@
         register: function(data) {
           return $http({
             method: 'POST',
-            url: baseUrl + 'auth/register',
+            url: baseUrl + '/auth/register',
             data: data,
           }).then(function(data) {
             return data;
