@@ -1,7 +1,7 @@
 (function() {
   angular.module('myApp')
     .service('crudService', ['$http', function($http) {
-      var baseUrl = 'http://gstudy.herokuapp.com/api';
+      var baseUrl = 'http://localhost:3000/api';
       return {
         getAll: function(resource) {
           return $http({
