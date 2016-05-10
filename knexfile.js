@@ -11,11 +11,16 @@ module.exports = {
   production: {
      client: 'postgresql',
      connection: {
-       host: 'gstudy-app.cir6g5gfr1fr.us-west-2.rds.amazonaws.com:5432',
+       host: 'gstudy-app.cir6g5gfr1fr.us-west-2.rds.amazonaws.com',
+       port: 5432,
        database: 'gstudy',
        user:     'MikeDee242',
        password: 'TestPW123'
      },
+     pool: {
+       min: 0,
+       max: 7,
+     }
     }
 
 };
