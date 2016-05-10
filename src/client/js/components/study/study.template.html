@@ -39,7 +39,9 @@
         <span ng-class="{red: incorrect > 0}">{{ incorrect }}</span> questions incorrect</h4>
       <hr />
       <br />
-      <div ng-repeat="answeredCard in answeredCards" ng-show="answeredCards.length">
+      <h2>Previously Viewed</h2>
+      <hr />
+      <div ng-repeat="answeredCard in answeredCards" ng-show="answeredCards.length" class="previous-cards">
         <div class="well well-lg">
           <h3>{{ answeredCard.question }}</h3>
         </div>
@@ -47,6 +49,7 @@
         <div class="well well-lg">
           <h3>{{ answeredCard.answer }}</h3>
         </div>
+        <hr />
       </div>
     </div>
   </div>

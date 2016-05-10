@@ -38,3 +38,8 @@ well img {
   height: 600px;
   overflow: scroll;
 }
+
+.previous-cards {
+  height: 500px;
+  overflow: scroll;
+}
