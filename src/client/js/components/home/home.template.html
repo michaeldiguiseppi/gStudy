@@ -5,19 +5,23 @@
     </div>
   </div>
   <br />
-  <div class="row">
-    <div class="col-lg-4" ng-repeat="deck in decks">
-      <a ui-sref="deck({ id: deck.id })">
-        <img src="http://placehold.it/300/300" alt="placeholder" />
-        <h3 class="text-center">{{ deck.deck_name }}</h3>
-      </a>
+  <div class="decks">
+    <div class="row">
+      <div class="col-lg-4" ng-repeat="deck in decks">
+        <a ui-sref="deck({ id: deck.id })">
+          <img src="http://placehold.it/300/300" alt="placeholder" />
+          <h3 class="text-center">{{ deck.deck_name }}</h3>
+        </a>
+      </div>
     </div>
   </div>
 </div>
 <div class="col-lg-4">
   <div class="notifications" ng-controller="SocketCtrl">
     <div ng-repeat="notif in notifications track by $index">
-      {{ notif }}
+      <div class="well well-lg">
+        {{ notif.user.first_name }}{{ notif.message }}<a ui-sref="deck({ id: notif.deck_id})">{{ notif.deck }}</a>
+      </div>
     </div>
   </div>
 </div>
