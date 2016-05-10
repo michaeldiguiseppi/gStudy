@@ -11,14 +11,14 @@
         <a ui-sref="deck({ id: deck.id })">
           <img src="http://placehold.it/300/300" alt="placeholder" />
           <h3 class="text-center">{{ deck.deck_name }}</h3>
-          <h3 class="text-center">
+          <h4 class="text-center">
             <span ng-if="deck.created_at >= deck.updated_at">
-              Created {{ deck.created_at | date:"MM/dd/yyyy 'at' h:mma" }}
+              Created <span am-time-ago="deck.created_at"></span>
             </span>
             <span ng-if="deck.updated_at > deck.created_at">
-              Updated {{ deck.updated_at | date:"MM/dd/yyyy 'at' h:mma" }}
+              Updated <span am-time-ago="deck.updated_at"></span>
             </span>
-          </h3>
+          </h4>
         </a>
       </div>
     </div>
