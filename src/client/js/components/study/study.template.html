@@ -41,15 +41,17 @@
       <br />
       <h2>Previously Viewed</h2>
       <hr />
-      <div ng-repeat="answeredCard in answeredCards" ng-show="answeredCards.length" class="previous-cards">
-        <div class="well well-lg">
-          <h3>{{ answeredCard.question }}</h3>
+      <div class="previous-cards">
+        <div ng-repeat="answeredCard in answeredCards" ng-show="answeredCards.length">
+          <div class="well well-lg">
+            <h3>{{ answeredCard.question }}</h3>
+          </div>
+          <br />
+          <div class="well well-lg">
+            <h3>{{ answeredCard.answer }}</h3>
+          </div>
+          <hr />
         </div>
-        <br />
-        <div class="well well-lg">
-          <h3>{{ answeredCard.answer }}</h3>
-        </div>
-        <hr />
       </div>
     </div>
   </div>
