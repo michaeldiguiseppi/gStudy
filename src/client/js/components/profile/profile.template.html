@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container" ng-init="getInfo()">
+  <h1>My Decks</h1>
+  <hr />
   <br />
   <div  ng-repeat="deck in decks">
     <div class="row">
       <div class="col-lg-4">
-        <img src="http://placehold.it/300/300" alt="placeholder" />
+        <img src="http://placehold.it/200/200" alt="placeholder" />
       </div>
       <div class="col-lg-8">
         <h2>{{ deck.deck_name }}</h2>
@@ -13,7 +15,7 @@
             <button class="btn btn-md btn-warning" ng-click="editDeck(deck.id)">Edit Deck</button>
           </div>
           <div class="col-lg-2">
-            <button class="btn btn-md btn-danger">Delete Deck</button>
+            <button class="btn btn-md btn-danger" ng-click="deleteDeck(deck.id)">Delete Deck</button>
           </div>
         </div>
       </div>

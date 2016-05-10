@@ -7,7 +7,12 @@
           return crudService.getAll('decks').then(function(data) {
             return data;
           });
-        }
+        },
+        deleteDeck: function(id) {
+          return crudService.deleteOne('decks', id).then(function(data) {
+            return data;
+          });
+        },
       };
     }]);
 })();

@@ -19,6 +19,8 @@ router.post('/decks/:id', postDecks);
 router.post('/cards/:id', postCards);
 router.put('/decks/:id', putDecks);
 router.put('/cards/:id', putCards);
+router.delete('/decks/:id', deleteDecks);
+router.delete('/cards/:id', deleteCards);
 
 ////////////////////////////////
 
@@ -71,6 +73,19 @@ function putCards(req, res) {
   Cards().where('id', card_id).update(req.body, 1).then(function(card) {
     res.json(card);
   });
+}
+
+function deleteDecks(req, res) {
+  var deck_id = req.params.id;
+  Decks().where('id', deck_id).del().then(function() {
+    res.json({
+      message: 'Deleted successfully.'
+    });
+  });
+}
+
+function deleteCards(req, res) {
+
 }
 
 module.exports = router;
