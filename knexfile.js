@@ -11,15 +11,18 @@ module.exports = {
   production: {
      client: 'postgresql',
      connection: {
-       host: 'gstudy-app.cir6g5gfr1fr.us-west-2.rds.amazonaws.com:5432',
-       database: process.env.RDS_DBNAME,
-       user:     process.env.RDS_USERNAME,
-       password: process.env.RDS_PASSWORD
+       host: 'gstudy-app.cir6g5gfr1fr.us-west-2.rds.amazonaws.com',
+       database: 'gstudy',
+       user:     'MikeDee242',
+       password: 'TestPW123'
      },
-     pool: {
-       min: 2,
-       max: 10,
-     }
     }
 
 };
+
+
+// psql \
+//    --host=gstudy-app.cir6g5gfr1fr.us-west-2.rds.amazonaws.com \
+//    --port=5432 \
+//    --username MikeDee242 \
+//    --dbname=gstudy
