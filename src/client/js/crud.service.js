@@ -2,7 +2,7 @@
   angular.module('myApp')
     .service('crudService', ['$http', function($http) {
       var baseUrl;
-      if (process.env.NODE_ENV === 'production') {
+      if (NODE_ENV === 'production') {
         baseUrl = 'http://gstudy.herokuapp.com/api';
       } else {
         baseUrl = 'http://localhost:3000/api';

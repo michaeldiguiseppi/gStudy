@@ -2,7 +2,7 @@
   angular.module('myApp')
     .service('RegisterService', ['$http', '$window', function($http, $window) {
       var baseUrl;
-      if (process.env.NODE_ENV === 'production') {
+      if (NODE_ENV === 'production') {
         baseUrl = 'http://gstudy.herokuapp.com';
       } else {
         baseUrl = 'http://localhost:3000';
