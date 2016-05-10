@@ -14,6 +14,7 @@ function Cards () {
 router.get('/decks', getDecks);
 router.get('/decks/:id', getOneDeck);
 router.get('/cards/:id', getCards);
+router.get('/user/:id', getUser);
 router.post('/decks/:id', postDecks);
 router.post('/cards/:id', postCards);
 router.put('/decks/:id', putDecks);
@@ -39,12 +40,18 @@ function getCards(req, res) {
   });
 }
 
+function getUser(req, res) {
+  Users().where('id', req.params.id).then(function(data) {
+    res.json(data);
+  });
+}
+
 function postDecks(req, res) {
   console.log('req.body', req.body);
   req.body.user_id = req.params.id;
-  global.io.emit('status', 'deck created');
   delete req.body.cards;
   Decks().insert(req.body).returning('id').then(function(data) {
+    global.io.emit('deck.created', { message: ' created ', deck_id: data[0], user_id: req.body.user_id });
     res.json(data);
   });
 }
