@@ -1,9 +1,12 @@
 (function() {
   angular.module('myApp')
     .controller('SocketCtrl', ['SocketService', '$scope', function(SocketService, $scope) {
-      SocketService.forward('status', $scope);
-          $scope.$on('socket:status', function (ev, data) {
-            console.log('from angular!', ev, data);
+      $scope.notifications = [];
+      console.log('Controller!');
+      SocketService.forward('deck.studying', $scope);
+          $scope.$on('socket:deck.studying', function (ev, data) {
+            console.log('from angular!', data);
+            $scope.notifications.push(data);
           });
     }]);
 })();
