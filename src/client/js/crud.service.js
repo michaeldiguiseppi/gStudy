@@ -37,7 +37,8 @@
         updateOne: function(resource, id, data) {
           return $http({
             method: 'PUT',
-            url: baseUrl + '/' + resource + '/' + id
+            url: baseUrl + '/' + resource + '/' + id,
+            data: data,
           }).then(function(data) {
             return data;
           }).catch(function(err) {
