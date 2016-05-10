@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6" ng-show="!game">
+      <div class="well well-lg">
+        <h2>Game ended. <br /> Final score: {{ correct }} correct out of {{ correct + incorrect }}.</h2>
+      </div>
+    </div>
+    <div class="col-lg-6" ng-show="game">
+      <div class="well well-lg">
+        <h2>{{ cards[cardNum].question }}</h2>
+      </div>
+      <br />
+      <hr />
+      <div class="row" ng-show="showAnswer">
+        <div class="col-lg-6">
+          <button class="btn btn-md btn-success" ng-click="confident(cards[cardNum].id)">Confident</button>
+        </div>
+        <div class="col-lg-6">
+          <button class="btn btn-md btn-danger pull-right" ng-click="nonConfident(cards[cardNum].id)">Not Confident</button>
+        </div>
+      </div>
+      <br />
+      <div class="well well-lg" ng-click="showAnswer = true">
+        <div ng-show="showAnswer">
+          <h2 class="text-center">{{ cards[cardNum].answer }}</h2>
+        </div>
+        <div ng-show="!showAnswer">
+          <h1 class="text-center">?</h1>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h1>{{ deck.deck_name }}</h1>
+      <br />
+      <h4><span>{{ remaining }}</span> questions remain &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span ng-class="{green: correct > 0}">{{ correct }}</span> questions correct &nbsp;&nbsp; | &nbsp;&nbsp;
+        <span ng-class="{red: incorrect > 0}">{{ incorrect }}</span> questions incorrect</h4>
+      <hr />
+      <br />
+    </div>
+  </div>
+</div>
