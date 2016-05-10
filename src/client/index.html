@@ -38,11 +38,20 @@
     <!-- Load Sockets.io -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="./vendor/socket.min.js"></script>
+    <!-- <script>
+      var socket = io('http://localhost:3000');
+      socket.on('status', function (data) {
+        console.log('data from index', data);
+        socket.emit('from.server', { my: 'data' });
+      });
+    </script> -->
     <!-- Load main files -->
     <script src="./js/app.js"></script>
     <script src="./js/routes.js"></script>
     <script src="./js/crud.service.js"></script>
     <!-- Load all directive files -->
+    <script src="./js/components/sockets/sockets.service.js"></script>
+    <script src="./js/components/sockets/sockets.controller.js"></script>
     <script src="./js/components/auth/login.controller.js"></script>
     <script src="./js/components/auth/login.directive.js"></script>
     <script src="./js/components/auth/login.service.js"></script>
