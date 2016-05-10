@@ -83,15 +83,25 @@ function hashPassword (req, res, next) {
 // compare password to verify plain text against the hashed password
 function comparePassword (req, res, next)  {
   Users().select().where('email', req.body.email).then(function(user) {
+    console.log(user);
+    console.log(req.body.password);
     bcrypt.compare(req.body.password, user[0].password, function(err, match) {
-      if(err) {
-        return next(err);
+      console.log('err', err);
+      console.log('match', match);
+      if(err || !match) {
+        return res.status(401).json({
+          status: 'fail',
+          message: 'Incorrect email or password.',
+          requestBody: req.body
+        });
+      } else if (match) {
+        next();
       }
-      next();
     });
   })
   .catch(function(err) {
     console.log(err);
+    return next(err);
   });
 }
 
