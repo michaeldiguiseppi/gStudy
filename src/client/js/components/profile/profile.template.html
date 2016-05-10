@@ -12,10 +12,10 @@
         <p>{{ deck.description }}</p>
         <div class="row">
           <div class="col-lg-2">
-            <button class="btn btn-md btn-warning" ng-click="editDeck(deck.id)">Edit Deck</button>
+            <a class="btn btn-md btn-warning" ui-sref="edit({ id: deck.id })">Edit Deck</a>
           </div>
           <div class="col-lg-2">
-            <button class="btn btn-md btn-danger" ng-click="deleteDeck(deck.id)">Delete Deck</button>
+            <a class="btn btn-md btn-danger" ng-click="deleteDeck(deck.id)">Delete Deck</a>
           </div>
         </div>
       </div>
