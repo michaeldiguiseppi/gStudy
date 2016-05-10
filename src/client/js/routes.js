@@ -43,6 +43,14 @@
               requireLogin: true,
             }
         })
+        .state('edit', {
+          url: "/edit/:id",
+          templateUrl: "js/components/decks/edit.template.html",
+          controller: 'ProfileCtrl',
+          data: {
+            requireLogin: true,
+          }
+        })
         .state('study', {
           url: "/study/:id",
           templateUrl: "js/components/study/study.template.html",
