@@ -6,3 +6,11 @@ a, a:hover{
   color: #00B7FF;
   text-decoration: none;
 }
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
