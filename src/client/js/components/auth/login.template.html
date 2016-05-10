@@ -1,6 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4">
+      <div class="alert alert-danger" ng-show="errors.length">
+        <p ng-repeat="error in errors">
+          {{ error }}
+        </p>
+      </div>
       <form class="form-horizontal" ng-submit="login()">
         <div class="row">
           <input type="text" class="form-control" placeholder="Email Address" ng-model="user.email" />
