@@ -35,16 +35,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <!-- Load UI-Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+    <!-- Load moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+    <!-- Load Angular-moment -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js"></script>
     <!-- Load Sockets.io -->
     <script src="/socket.io/socket.io.js"></script>
     <script src="./vendor/socket.min.js"></script>
-    <!-- <script>
-      var socket = io('http://localhost:3000');
-      socket.on('status', function (data) {
-        console.log('data from index', data);
-        socket.emit('from.server', { my: 'data' });
-      });
-    </script> -->
     <!-- Load main files -->
     <script type="text/javascript">
       window.NODE_ENV = 'production';
@@ -52,7 +49,7 @@
     <script src="./js/app.js"></script>
     <script src="./js/routes.js"></script>
     <script src="./js/crud.service.js"></script>
-    <!-- Load all directive files -->
+    <!-- Load all component files -->
     <script src="./js/components/sockets/sockets.service.js"></script>
     <script src="./js/components/sockets/sockets.controller.js"></script>
     <script src="./js/components/auth/login.controller.js"></script>
