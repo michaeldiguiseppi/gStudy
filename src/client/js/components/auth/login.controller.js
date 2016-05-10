@@ -3,7 +3,6 @@ angular.module('myApp')
   function($scope, $rootScope, AuthService, $state) {
       $scope.user = {};
       $scope.login = function() {
-        console.log('Got here? ');
         AuthService.login(this.user).then(function(data) {
           if (data.status === 200) {
             AuthService.setUserInfo(data);

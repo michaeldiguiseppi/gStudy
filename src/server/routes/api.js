@@ -47,7 +47,6 @@ function getUser(req, res) {
 }
 
 function postDecks(req, res) {
-  console.log('req.body', req.body);
   req.body.user_id = req.params.id;
   delete req.body.cards;
   Decks().insert(req.body).returning('id').then(function(data) {
@@ -69,8 +68,6 @@ function putDecks(req, res) {
 
 function putCards(req, res) {
   var card_id = req.params.id;
-  console.log(card_id);
-  console.log(req.body);
   Cards().where('id', card_id).update(req.body, 1).then(function(card) {
     res.json(card);
   });

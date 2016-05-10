@@ -4,7 +4,6 @@
     function($scope, $stateParams, $rootScope, $state, HomeService, DeckService) {
       $scope.getDeck = function() {
         HomeService.getOne($stateParams.id).then(function(data) {
-          console.log('data', data);
           $scope.deck = data;
           DeckService.getCards(data.id).then(function(cards) {
             $scope.cards = cards;
@@ -25,7 +24,6 @@
         };
 
         $scope.addDeck = function() {
-          console.log($scope.newDeck);
           var user_id = JSON.parse($rootScope.currentUser).id;
           DeckService.addDeck(user_id, $scope.newDeck).then(function() {
             $state.go('home');

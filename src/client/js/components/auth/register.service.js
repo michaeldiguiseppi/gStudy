@@ -20,7 +20,6 @@
           });
         },
         setUserInfo: function(user) {
-          console.log(user);
           $window.localStorage.setItem('user', JSON.stringify(user.data));
           $window.localStorage.setItem('token', JSON.stringify(user.token));
         }

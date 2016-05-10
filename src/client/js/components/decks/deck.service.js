@@ -17,7 +17,6 @@
           var insertCards = data.cards;
           return crudService.addOne('decks', user_id, data).then(function(deck) {
             return insertCards.forEach(function(card) {
-              console.log('card', card);
               return crudService.addOne('cards', deck.data[0], card).then(function(data) {
                 return data.data;
               });

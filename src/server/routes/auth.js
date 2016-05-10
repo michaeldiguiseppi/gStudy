@@ -28,7 +28,6 @@ router.post('/register', hashPassword, function(req, res, next) {
 
 router.post('/login', comparePassword, function (req, res, next) {
   // ensure that user exists
-  console.log('Got here!!!!!!');
   Users().select().where('email', req.body.email)
   .then(function (user) {
     if (!user[0]) {
@@ -56,7 +55,6 @@ router.post('/login', comparePassword, function (req, res, next) {
       });
   })
   .catch(function (err) {
-    console.log(err);
     return next(err);
   });
 });
@@ -84,9 +82,7 @@ function hashPassword (req, res, next) {
 
 // compare password to verify plain text against the hashed password
 function comparePassword (req, res, next)  {
-  console.log('getting here?');
   Users().select().where('email', req.body.email).then(function(user) {
-    console.log(user);
     bcrypt.compare(req.body.password, user[0].password, function(err, match) {
       if(err) {
         return next(err);
