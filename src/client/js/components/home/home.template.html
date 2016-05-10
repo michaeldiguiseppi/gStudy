@@ -15,7 +15,9 @@
   </div>
 </div>
 <div class="col-lg-4">
-  <div class="notifications">
-
+  <div class="notifications" ng-controller="SocketCtrl">
+    <div ng-repeat="notif in notifications track by $index">
+      {{ notif }}
+    </div>
   </div>
 </div>
