@@ -22,7 +22,24 @@
               });
             });
           });
-        }
+        },
+        editDeck: function(deck_id, data) {
+          var insertCards = data.cards;
+          return crudService.updateOne('decks', deck_id, data).then(function(deck) {
+            return insertCards.forEach(function(card) {
+              if (card.id) {
+                return crudService.updateOne('cards', card.id, card).then(function(data) {
+                  return data.data;
+                });
+              } else {
+                return crudService.addOne('cards', deck.data, card).then(function(data) {
+                  return data.data;
+                });
+              }
+
+            });
+          });
+        },
       };
     }]);
 
