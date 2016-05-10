@@ -42,6 +42,7 @@ function getCards(req, res) {
 function postDecks(req, res) {
   console.log('req.body', req.body);
   req.body.user_id = req.params.id;
+  global.io.emit('status', 'deck created');
   delete req.body.cards;
   Decks().insert(req.body).returning('id').then(function(data) {
     res.json(data);
