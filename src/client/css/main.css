@@ -23,3 +23,14 @@ well img {
   height: 100px;
   width: 100px;
 }
+
+.notifications {
+  padding-top: 60px;
+  height: 660px;
+  overflow: scroll;
+}
+
+.decks {
+  height: 600px;
+  overflow: scroll;
+}
