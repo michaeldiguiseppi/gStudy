@@ -12,7 +12,6 @@ function Users () {
 
 router.post('/register', hashPassword, function(req, res, next) {
   // ensure user does not already exist
-  req.body.email = req.body.email.toLowerCase();
   Users().insert(req.body)
     .returning('*')
     .then(function (member) {
@@ -83,7 +82,7 @@ function hashPassword (req, res, next) {
 
 // compare password to verify plain text against the hashed password
 function comparePassword (req, res, next)  {
-  Users().select().where('email', req.body.email.toLowerCase()).then(function(user) {
+  Users().select().where('email'.toLowerCase(), req.body.email.toLowerCase()).then(function(user) {
     bcrypt.compare(req.body.password, user[0].password, function(err, match) {
       if(err || !match) {
         return res.status(401).json({
